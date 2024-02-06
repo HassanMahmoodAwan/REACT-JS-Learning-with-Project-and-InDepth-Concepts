@@ -14,6 +14,14 @@ function App() {
   }
   function addUsingHooks(){
     setCounter(count + 1)
+    setCounter(count + 1)
+    setCounter(count + 1) 
+    setCounter(count + 1)   /*Will be Increament One Time */
+
+    // For Multiple Add-On
+    // setCounter( (prevCounter)=>(prevCounter + 1))
+    // setCounter( (prevCounter)=>(prevCounter + 1))
+    // setCounter( (prevCounter)=>(prevCounter + 1))
   }
   const removeValue = ()=>{
     if (count <= 0) setCounter(count)
