@@ -1,11 +1,15 @@
 import { useState } from 'react'
-
+import Greetings  from './Component.jsx'
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
-    <h1>React JS STARTED</h1>
+    // Wrap all elements in one called Fragment.
+    <> 
+      <Greetings />
+      <p>React JS STARTED</p>
+    </>
   )
 }
 
