@@ -10,7 +10,7 @@ const initialState = {
 }
 
 const todoSlice = createSlice({
-    name: "todos",
+    name: "todosApp",
     initialState: initialState,
     reducers: {
         addTodo: (state, actions)=>{
@@ -21,7 +21,7 @@ const todoSlice = createSlice({
             state.todos.push(todo)
         },
         deleteTodo: (state, actions)=>{
-            state.todos.filter( (indiv_Todo)=> indiv_Todo.id !== actions.payload)
+            state.todos = state.todos.filter( (indiv_Todo)=> indiv_Todo.id !== actions.payload)
         }
 
     }

@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import {deleteTodo} from '../features/todo/todoSlice'
 
 function Todo() {
-    const todosState = useSelector(state => state.todos)
+    const todosState = useSelector( state => state.todos )
     const dispatch = useDispatch()
 
     
@@ -17,7 +17,7 @@ function Todo() {
             className="mt-4 flex justify-between items-center bg-zinc-800 px-4 py-2 rounded"
             key={todo.id}
           >
-            <div className='text-white'>{todo.text}</div>
+            <div className='text-white'>{todo.todoText}</div>
             <button
              onClick={() => dispatch(deleteTodo(todo.id))}
               className="text-white bg-red-500 border-0 py-1 px-4 focus:outline-none hover:bg-red-600 rounded text-md"
