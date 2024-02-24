@@ -53,7 +53,7 @@ function Navbar() {
             <button className="hidden lg:block bg-blue-700 px-5 py-2 rounded hover:bg-blue-800">Linkedin</button>
 
             {/* Hamburger Icon */}
-            <div className="block md:hidden text-3xl">&#9776;</div>
+            <div className="block md:hidden text-3xl cursor-pointer text-blue-400">&#9776;</div>
 
         </div>
     </div>
