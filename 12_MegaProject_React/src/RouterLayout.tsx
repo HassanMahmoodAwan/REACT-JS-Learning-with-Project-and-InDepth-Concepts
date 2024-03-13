@@ -4,11 +4,11 @@ import { Footer, Navbar } from './components'
 
 function RouterLayout() {
   return (
-    <>
+    <div className='h-screen bg-slate-950'>
       <Navbar />
       <Outlet />
       <Footer />
-    </>
+    </div>
   )
 }
 

@@ -2,7 +2,7 @@
 
 function Home() {
   return (
-    <div className="h-[400px] bg-slate-950 grid place-content-center text-white">
+    <div className="h-[400px] bg-slate-950 grid place-content-center text-center text-white">
         <h1 className="text-3xl font-bold text-slate-100 ">Utility APP with Lots of Functions</h1>
         <p className="mt-3 text-md text-slate-500 text-center">Design By Hassan Mahmood</p>
 
