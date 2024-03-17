@@ -13,8 +13,10 @@ function App() {
     let pass = ''
     let str = 'ABCDEFGHIJKLMNOPQRSTWXYZabcdefghijklmnopqrstwxyz'
 
-    if (numberAllowed) str += '123456789'
-    if (charAllowed) str += '!@#$%^&*(){}|/?'
+    if (numberAllowed) 
+      str += '123456789'
+    if (charAllowed) 
+      str += '!@#$%^&*(){}|/?'
 
     for (let i=0; i<= length; i++){
       let charIndex = parseInt(Math.random() * str.length + 1)

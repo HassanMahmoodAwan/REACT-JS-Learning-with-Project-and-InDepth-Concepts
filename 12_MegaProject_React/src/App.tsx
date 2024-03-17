@@ -3,6 +3,7 @@ import {Route, RouterProvider, createBrowserRouter, createRoutesFromElements} fr
 import RouterLayout from "./RouterLayout"
 import { CurrencyConverter, Home, Pass_Generator } from "./components"
 import './App.css'
+import TodoProps from "./components/TodoProps/TodoProps"
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Route path="" element={<Home />}/>
         <Route path="pass_Generator" element={<Pass_Generator/>} />
         <Route path="curr_Converter" element = {<CurrencyConverter />} />
+        <Route path="TodoProps" element = {<TodoProps />}/>
 
       </Route>
     )

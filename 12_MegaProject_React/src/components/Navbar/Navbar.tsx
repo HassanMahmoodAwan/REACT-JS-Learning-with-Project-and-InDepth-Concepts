@@ -29,9 +29,19 @@ function Navbar() {
 
                 
                 <li>
-                  <NavLink to='/curr_Converter' className={({isActive})=>`${isActive ? 'text-blue-400':'text-blue-100'}`}>
-                      Todo-Props
-                  </NavLink>
+                  {/* <NavLink to='/TodoProps' className={({isActive})=>`${isActive ? 'text-blue-400':'text-blue-100'}`}>
+                      TTodo App
+                  </NavLink> */}
+                  <button id="DropDownToggler" data-dropdown-toggle={"dropdownNavbar"} className="text-blue-100 hover:text-blue-400">TodoApp</button>
+                  <div className="hidden z-10 text-base text-slate-800 bg-slate-100">
+                    <ul aria-labelledby="dropdownLargeButton" className="">
+                      <li>Todo Props</li>
+                      <li>Todo Context API</li>
+                      <li>Todo Redux</li>
+                    </ul>  
+                  </div>
+                  
+
                 </li>
 
                 
