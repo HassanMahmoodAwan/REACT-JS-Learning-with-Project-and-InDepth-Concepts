@@ -1,4 +1,6 @@
-import express from "express"
+// import express from "express"
+const express = require('express')
+require("dotenv").config()
 
 const app = express()
 const PORT = process.env.PORT ?? 3000
@@ -11,7 +13,7 @@ const products = [
         qty: 150
     },{
         id: 2,
-        name: "tepal Chai",
+        name: "Tepal Chai",
         price: 500,
         qty: 60
     },{
@@ -37,7 +39,19 @@ app.get("/", (req, res)=>{
 })
 
 app.get("/app/Products", (req, res)=>{
-    res.send(products)
+
+    if (req.query.search){
+        let result = products.filter((product)=>product.name.toLowerCase().includes((req.query.search).toLowerCase()))
+
+        res.send(result)
+        return;
+    }
+
+    setTimeout(()=>{
+        res.send(products)
+    }, 2000)
+    
+    
 })
 
 
