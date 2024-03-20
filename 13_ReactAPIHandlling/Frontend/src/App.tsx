@@ -1,13 +1,30 @@
 // Learn Race Condition API, Debouncing, Trohteling
 
 import { useState, useEffect } from 'react'
-import axios from 'axios'
+import axios from "axios"
 
 
 function App() {
- 
-  // const [search, setSearch] = useState('')
-  const [search, setSearch, products, error, loading] = useReactQueryHook(`/app/products?search=`)
+  const [products, setProducts]= useState([])
+  const [error, setError] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [search, setSearch] = useState('')
+  
+  useEffect(()=>{
+    ;(async ()=>{
+      
+      try {
+        setError(false)
+        setLoading(true)
+        const response = await axios.get('/app/products?search='+search)
+        setProducts(response.data)
+        setLoading(false)
+      } catch (error) {
+        setError(true)
+        console.log("Error Occurred")
+      }
+    })();
+  }, [search])
 
 
   return (
@@ -20,6 +37,14 @@ function App() {
       <p className='text-xl font-semibold'>
         {error?"Something went Wrong":loading?"Loading....":`Number of Products: ${products.length}`}
       </p>
+
+      
+      {products.map((product)=>{
+        <div key={product.id}>
+          hello
+        </div>
+      })}
+
     </div>
   )
 
@@ -27,27 +52,3 @@ function App() {
 export default App
 
 
-function useReactQueryHook(urlPath){
-  const [products, setProducts]= useState([])
-  const [error, setError] = useState(false)
-  const [loading, setLoading] = useState(false)
-  const [search, setSearch] = useState('')
-
-  useEffect(()=>{
-    ;(async ()=>{
-      
-      try {
-        setError(false)
-        setLoading(true)
-        const response = await axios.get(urlPath+search)
-        setProducts(response.data)
-        setLoading(false)
-      } catch (error) {
-        setError(true)
-        console.log("Error Occurred")
-      }
-    })();
-  }, [search])
-
-  return [search, setSearch, products, error, loading]
-}
